@@ -1,19 +1,14 @@
-def isPrime(n):
-    if(n==0):
+
+def isPrime(num):
+    if(num==0 or num<0 or num==1):
         return False
-    elif(n==1):
-        return False
-    elif(n < 0):
-        return False
-    elif(n==2):
+    elif(num==2):
         return True
     else:
-        for i in range(2,n):
-            if (n%i==0):
-
+        for i in range(3,num+1):
+            if(num%i ==0):
                 return False
+
             return True
-print(isPrime(17))
-
-
+print(prime(7))
 
