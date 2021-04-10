@@ -1,27 +1,18 @@
-def extra(func):
-    def wrapper(nums):
-        for number in range(1,nums+1):
-            i = 1
-            sum=0
-            while(number>i):
-                if(number%i==0):
-                    sum +=i
-                i+=1
-            if(sum==number):
-                print("perfect number:",number)
-        func(nums)
-    return wrapper
+def is_prime(x):
+    i = 2
+    while(x>i):
+        if(x%i==0):
+            return False
+        i +=1
+    return True
+def generator():
+    i =2
+    while True:
+        if(is_prime(i)):
+            yield i
+        i +=1
 
-@extra
-def prime(num):
-    for number in range(2,num+1):
-        i = 2
-        nmbr = 0
-        while(number>i):
-            if(number%i==0):
-                nmbr +=1
-            i +=1
-        if(nmbr==0):
-            print(number)
-
-prime(100)
+for number in generator():
+    if(number>100):
+        break
+    print(number )
